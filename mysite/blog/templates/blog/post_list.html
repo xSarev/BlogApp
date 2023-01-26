@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div class="center-stage">
+    {% for post in post_list%}
+        <div class="card border-secondary mb-3" style="max-width: 100%;">
+            <div class="card-header">Published on: {{post.published_date|date:"d-m-Y"}}</div>
+            <div class="card-body">
+              <h5 class="card-title text-center "><a class="text-body text-decoration-none" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|title }}</a></h5>
+              <p class="card-text">{{ post.text|safe|linebreaksbr }}</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-outline-success" href="{% url 'post_detail' pk=post.pk %}">Comments: {{post.approve_comments.count}}</a>
+            </div>
+          </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

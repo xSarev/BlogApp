@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(-45deg, #57ac30, #4e9613, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#special-tag a {
+    color: red;
+}
+
+.fa-user-astronaut {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.32rem;
+}
+
+.center-stage {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

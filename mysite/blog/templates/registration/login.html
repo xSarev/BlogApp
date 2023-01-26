@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <h1>Login</h1>
+                {% if form.errors %}
+                        <div class="alert alert-danger" role="alert">
+                            Wrong username or password!
+                        </div>
+                {% endif %}
+                <form class="box" action="{% url 'login' %}" method="POST">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        <p class="text-muted"> Please enter your login and password!</p> 
+                        {{ form.as_p }}
+                        <a class="forgot text-muted" href="#">Forgot password?</a> 
+                        <input type="submit" class="btn btn-success form-control" value="Login">
+                        <input type="hidden" name="next" value="{{next}}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
