@@ -24,4 +24,7 @@ COPY ./mysite /app
 RUN adduser -D user
 USER user
 
+EXPOSE 8000
+
 ENTRYPOINT ["python3", "manage.py", "runserver"]
+CMD ["0.0.0.0:8000"]
