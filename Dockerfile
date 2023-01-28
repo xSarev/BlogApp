@@ -22,6 +22,9 @@ WORKDIR /app
 COPY ./mysite /app
 
 RUN adduser -D user
+
+RUN chown -R user:user /app
+
 USER user
 
 EXPOSE 8000
