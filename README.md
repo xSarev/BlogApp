@@ -1,6 +1,6 @@
 # Simple Blog App with Django
 
-## Preruiquisites
+## Prerequisites
 
 docker
 
